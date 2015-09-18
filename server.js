@@ -6,14 +6,13 @@ var createLocation = require('history/lib/createLocation')
 var React = require('react');
 var Router = require('react-router')
 
-var routes = require('./src/js/routes')
+var routes = require('./src/routes')
 
 var app = express();
 
 app.set('view engine', 'jade')
 app.use('/src', express.static('static/src'))
 
-console.log(Router.Router.run)
 app.get('*', function (req, res) {
   var location = createLocation(req.url)
 
@@ -28,8 +27,6 @@ app.get('*', function (req, res) {
     else
       res.render('index', { dom: React.renderToString(React.createElement(Router.RoutingContext, React.__spread({}, renderProps))) });
   });
-
-  res.sendFile(path.join(__dirname, 'static', 'index.html'));
 });
 
 app.listen(4444, 'localhost', function (err) {

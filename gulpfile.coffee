@@ -6,13 +6,12 @@ source = require 'vinyl-source-stream'
 lrload = require 'livereactload'
 
 path =
-  HTML: 'src/index.html'
   MIN_OUT: 'build.min.js',
   OUT: 'build.js',
   DEST_SRC: 'static/src',
   DEST_BUILD: 'static/build',
   DEST: 'static'
-  ENTRY_POINT: './src/js/root.cjsx'
+  ENTRY_POINT: './src/root.cjsx'
 
 buildScript = (files, watch) ->
   rebundle = ->
@@ -37,16 +36,11 @@ buildScript = (files, watch) ->
   rebundle()
 
 
-gulp.task 'default', ['copy'], ->
+gulp.task 'default', ->
   buildScript path.ENTRY_POINT, false
 
-gulp.task 'watch', ['copy'], ->
+gulp.task 'watch', ->
   lrloadPath = "#{path.DEST_SRC}/#{path.OUT}"
   console.log(lrloadPath)
   lrload.monitor  lrloadPath, {displayNotification: true}
-  gulp.watch(path.HTML, ['copy'])
   buildScript path.ENTRY_POINT, true
-
-gulp.task 'copy', ->
-  gulp.src path.HTML
-    .pipe gulp.dest(path.DEST)
