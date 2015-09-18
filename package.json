@@ -1,0 +1,21 @@
+{
+  "name": "proto",
+  "version": "0.0.0",
+  "dependencise": {},
+  "devDependencies": {
+    "browserify": "^11.1.0",
+    "coffee-reactify": "^4.0.0",
+    "coffee-script": "^1.10.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-cjsx": "^3.0.0",
+    "history": "^1.9.1",
+    "jade": "^1.11.0",
+    "livereactload": "^0.7.0",
+    "node-cjsx": "^1.0.0",
+    "react": "^0.13.3",
+    "react-router": "^1.0.0-rc1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  }
+}
