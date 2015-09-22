@@ -4,4 +4,5 @@ React = require 'react'
 
 routes = require './routes'
 
-React.render routes, document.getElementById('root2')
+window.onload = ->
+  React.render routes, document.getElementById('root2')

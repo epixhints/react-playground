@@ -12,12 +12,11 @@ klass = React.createClass
   componentDidMount: ->
     console.warn(this.state)
     { dispatch } = this.props
-    dispatch(fetchItems())
 
   render: ->
     console.log this.props
     <div>
-      <h1>Prototype</h1>
+      <h1>Prototype!?</h1>
       <ul>
         <li>
           <Link to='/'>
@@ -37,7 +36,6 @@ klass = React.createClass
     </div>
 
 mapStateToProps = (state) ->
-  console.debug(state)
   state
 
-module.exports = connect(mapStateToProps)(klass)
+module.exports = klass
