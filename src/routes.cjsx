@@ -2,7 +2,7 @@ React = require 'react'
 {Router, Route} = require 'react-router'
 History = require 'history'
 
-App = require './app'
+App = require '../components/redux_app'
 Parent = require './parent'
 
 history =

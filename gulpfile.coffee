@@ -28,7 +28,6 @@ buildScript = (files, watch) ->
   props.extensions = ['.cjsx', '.coffee']
 
   bundler = (if watch then watchify(browserify(props)) else browserify(props))
-  bundler.transform lrload
   bundler.on "update", ->
     rebundle()
     console.log "Rebundled... #{path.ENTRY_POINT}"
